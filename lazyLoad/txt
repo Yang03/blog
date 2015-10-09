@@ -1,11 +1,17 @@
 $prize = rand(0, 9);
-		if ($prize < 3) {
-			return 0;
-		}
-		if ($prize < 6) {
-			return 4;
-		}
-		if ($prize < 8) {
-			return 1;
-		}
-		return 2;
+if ($prize < 3) {
+	return 0;
+}
+if ($prize < 6) {
+	return 4;
+}
+if ($prize < 8) {
+	return 1;
+}
+return 2;
+
+rm -rf node_modules/gulp-sass
+rm -rf node_modules/gulp-all
+npm install
+sed -ri 's/task$/task.resume()/' node_modules/gulp-all/index.js
+npm run build
