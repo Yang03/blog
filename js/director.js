@@ -49,7 +49,7 @@
 
 
     function Context(path) {
-        var hashStr = location.hash.length === 0 || /^#!/.test(location.hash);
+        var hashStr = (location.hash.length === 0) || /^#!/.test(location.hash);
         this.path = normalize(path);
         path = this.path;
         this.target = path ? '#' + (hashStr ? '!' : '') + path : path;
@@ -128,7 +128,7 @@
     director.match = function (pattern, pathname, params) {
         var keys = [];
         //取出参数
-        pattern = pattern.replace(/:(\w+)/g, function (_, key) {
+        pattern = pattern.replace(/:(\w+)/g, function (value, key) {
             keys.push(key);
             return '([^\/]+)';
         }).replace(/\*/g, '(.*)') || '';
