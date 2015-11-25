@@ -1,4 +1,7 @@
-
+/*
+* inspired
+*https://github.com/visionmedia/page.js
+* */
 ~ function(w) {
     var reference = "director",
         oldReference = w[reference],
