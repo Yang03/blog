@@ -170,7 +170,7 @@
     * */
     director.noConflict = function() {
         w[reference] = oldReference;
-        return router;
+        return director;
     };
     w[reference] = director;
 
