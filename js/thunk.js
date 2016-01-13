@@ -14,7 +14,6 @@
 
       return function(done){
         var called;
-        console.log(done);
         args.push(function(){
           if (called) return;
           called = true;
