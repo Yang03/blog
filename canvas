@@ -1,0 +1,43 @@
+<html>
+    <body>
+        <canvas id="test" height="200" width="200" data-precent="20,30,50" data-color="#00d0c0,#00aaf1,#ffc233" data-size="100"></canvas>
+    </body>
+    <script>
+        window.onload = function() {
+            function initDraw(el) {
+                var el = document.getElementById(el);
+                var precent = el.dataset.precent.split(",");
+                var ctx = el.getContext('2d');
+                var color = el.dataset.color.split(",");
+                var start = Math.PI * 1.5, temp = 0, end = 0;
+                var point = el.dataset.size;
+                for(var i = 0; i < precent.length; i++) {
+                    temp = temp +  parseInt(precent[i]);
+                    end = Math.PI * (1.5 + 2 * temp /100);
+                    drawArc(ctx, point, start, end, color[i]);
+                    start = end;
+                }
+                drawText(ctx, point);
+            }
+            function drawArc(ctx, point, start, end, color) {
+                ctx.beginPath();
+                ctx.moveTo(point, point);
+                var width = (point * 4 / 5)
+                ctx.arc(point, point, width, start, end);
+                ctx.closePath();
+                ctx.fillStyle = color;
+                ctx.fill();
+            }
+            function drawText(ctx, point) {
+                ctx.beginPath();
+                var width = point * 3 / 5;
+                ctx.arc(point, point, width, 0, Math.PI*2);
+                ctx.closePath();
+                ctx.fillStyle = '#fff';
+                ctx.fill();
+            }
+
+            initDraw('test')
+        }
+    </script>
+</html>
