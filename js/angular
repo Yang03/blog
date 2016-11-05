@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.js"></script>
+    <!-- <script src="../dest/lib/base.js"></script>
+    <script src="../dest/index/index.js"></script> -->
+    <script>
+        window.data = null;
+        angular.module('testApp',[])
+        .controller('testController', ['$scope', '$window', function($scope, $window){
+        $scope.testData={
+            key1:[{
+                "first": "1",
+              "second": "2",
+              'offer_num': 20,
+              'type': [{'name': "大",'price': 1}, {'name': '小', 'pirce':2}],
+              'offer_price': 2,
+            },{
+                "first": "1",
+              "second": "2",
+              'offer_num': 1,
+              'type': [{'name': "大",'price': 1}, {'name': '小', 'pirce':2}],
+              'offer_price': 3,
+            },{
+                "first": "2",
+              "second": "444",
+              'offer_num': 1,
+             'type': [{'name': "大",'price': 1}, {'name': '小', 'pirce':2}],
+             'offer_price': 0,
+            }
+            ],
+            key2:[{
+                "first": "1",
+              "second": "2",
+              'offer_num': 10,
+              'type': [{'name': "大",'price': 1}, {'name': '小', 'pirce':2}],
+              'offer_price': 2,
+            },{
+                "first": "1",
+              "second": "2",
+              'offer_num': 10,
+              'type': [{'name': "大",'price': 1}, {'name': '小', 'pirce':2}],
+              'offer_price': 2
+
+            }],
+            key3:[{
+                "first": "1",
+              "second": "2",
+              'offer_num': 10,
+              'type': [{'name': "大",'price': 1}, {'name': '小', 'pirce':2}],
+              'offer_price': 2,
+            },{
+                "first": "1",
+              "second": "2",
+              'offer_num': 10,
+              'type': [{'name': "大",'price': 1}, {'name': '小', 'pirce':2}],
+              'offer_price': 2,
+          }]
+        };
+        $window.data = $scope.testData;
+        $scope.getTotal = function(){
+            var testData = $scope.testData;
+            var total = 0;
+            for(var key in testData) {
+                var data = testData[key];
+                data.forEach(function (value) {
+                    total+= value.offer_num * value. offer_price;
+                })
+            }
+            return total;
+        }
+    }]);
+    </script>
+</head>
+<body>
+  <div>
+      <table ng-app="testApp" ng-controller="testController">
+        <tr ng-repeat-start="(key, val) in testData">
+            <td rowspan="{{val.length}}">{{key}}</td>
+            <td>{{val[0].first}}</td>
+            <td>{{val[0].second}}</td>
+            <td><input type="text" value="{{val[0].offer_num}}" ng-model="val[0].offer_num" /></td>
+            <td><select >
+              <option ng-repeat="item in val[0].type" value="{{item.price}}">{{item.name}}</option>
+            </select></td>
+            <td><input type="text" value="{{val[0].offer_pirce}}" ng-model="val[0].offer_price"/></td>
+            <td>{{val[0].offer_num * val[0].offer_price}}</td>
+        </tr>
+        <tr ng-repeat-end ng-repeat="value in val.slice(1)">
+
+            <td>{{value.first}}</td>
+           <td>{{value.second}}</td>
+            <td><input type="text" value="{{value.offer_num}}" ng-model="value.offer_num"/></td>
+             <td><select>
+              <option ng-repeat = "item in value.type " value="{{item.price}}">{{item.name}}</option>
+            </select></td>
+             <td><input type="text" value="{{value.offer_pirce}}" ng-model="value.offer_price"/></td>
+             <td >{{value.offer_num * value.offer_price}}</td>
+        </tr>
+        <tr>
+         <td><b>Total</b></td>
+         <td></td>
+         <td><b>{{ getTotal() }}</b></td>
+       </tr>
+</table>
+  </div>
+</body>
+</html>
