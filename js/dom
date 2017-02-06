@@ -40,3 +40,40 @@ alert(Array.from(target.parentElement.childNodes).filter(ele => ele.nodeType == 
 })
 
 
+
+
+// 返回当前文档中第一个类名为 "test" 的元素
+var el = document.querySelector(".test");
+
+// 返回一个文档中所有的class为"note"或者 "alert"的div元素
+var els = document.querySelectorAll("div.note, div.alert");
+
+// 获取元素
+var el = document.getElementById('xx');
+var els = document.getElementsByClassName('test');
+var els = document.getElementsByTagName('input');
+
+var el1 = document.createElement('div');
+var el2 = document.createElement('input');
+var node = document.createTextNode('hello world!');
+
+// 添加、删除子元素
+ele.appendChild(el);
+ele.removeChild(el);
+
+// 替换子元素
+ele.replaceChild(el1, el2);
+
+// 插入子元素
+parentElement.insertBefore(newElement, referenceElement);
+
+// 添加、删除子元素
+ele.appendChild(el);
+ele.removeChild(el);
+
+// 替换子元素
+ele.replaceChild(el1, el2);
+
+// 插入子元素
+parentElement.insertBefore(newElement, referenceElement);
+
