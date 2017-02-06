@@ -1,0 +1,42 @@
+<ul class="test">
+  <li>1</li>
+  <li>2</li>
+  <li>3<ul>
+    <li>xx</li>
+  </ul></li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+</ul>
+
+
+var test = document.querySelector('ul.test');
+
+test.className+= ' foo'
+//classList.add('foo')
+
+console.log(test);
+
+
+
+var list = document.querySelectorAll('ul.test > li')
+
+//list[2].parentNode.removeChild(list[2])
+
+list[6].insertAdjacentHTML('afterend', '<li>test</li>')
+
+list[2].remove()
+
+
+
+
+document.querySelector('.test').addEventListener('click', event => { 
+var target = event.target
+alert(Array.from(target.parentElement.childNodes).filter(ele => ele.nodeType == 1).findIndex(ele => ele === target)) 
+})
+
+
