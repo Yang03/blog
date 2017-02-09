@@ -50,6 +50,7 @@ var els = document.querySelectorAll("div.note, div.alert");
 
 // 获取元素
 var el = document.getElementById('xx');
+
 var els = document.getElementsByClassName('test');
 var els = document.getElementsByTagName('input');
 
@@ -76,4 +77,7 @@ ele.replaceChild(el1, el2);
 
 // 插入子元素
 parentElement.insertBefore(newElement, referenceElement);
+
+
+https://jsfiddle.net/9x226rme/3/
 
