@@ -1,0 +1,4 @@
+var s = "M246.388597 322.556347a39.957 36.191 0 1 0 81.776492 0 39.957 36.191 0 1 0-81.776492 0Z"
+s.replace(/\d+?(\.\d+)?(?=[^\d])/g, function(match) {
+	return (parseFloat(match) * 72 / 1024).toString().match(/^\d+(?:\.\d{0,6})?/)
+})
