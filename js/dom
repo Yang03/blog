@@ -1,0 +1,83 @@
+<ul class="test">
+  <li>1</li>
+  <li>2</li>
+  <li>3<ul>
+    <li>xx</li>
+  </ul></li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+</ul>
+
+
+var test = document.querySelector('ul.test');
+
+test.className+= ' foo'
+//classList.add('foo')
+
+console.log(test);
+
+
+
+var list = document.querySelectorAll('ul.test > li')
+
+//list[2].parentNode.removeChild(list[2])
+
+list[6].insertAdjacentHTML('afterend', '<li>test</li>')
+
+list[2].remove()
+
+
+
+
+document.querySelector('.test').addEventListener('click', event => { 
+var target = event.target
+alert(Array.from(target.parentElement.childNodes).filter(ele => ele.nodeType == 1).findIndex(ele => ele === target)) 
+})
+
+
+
+
+// 返回当前文档中第一个类名为 "test" 的元素
+var el = document.querySelector(".test");
+
+// 返回一个文档中所有的class为"note"或者 "alert"的div元素
+var els = document.querySelectorAll("div.note, div.alert");
+
+// 获取元素
+var el = document.getElementById('xx');
+
+var els = document.getElementsByClassName('test');
+var els = document.getElementsByTagName('input');
+
+var el1 = document.createElement('div');
+var el2 = document.createElement('input');
+var node = document.createTextNode('hello world!');
+
+// 添加、删除子元素
+ele.appendChild(el);
+ele.removeChild(el);
+
+// 替换子元素
+ele.replaceChild(el1, el2);
+
+// 插入子元素
+parentElement.insertBefore(newElement, referenceElement);
+
+// 添加、删除子元素
+ele.appendChild(el);
+ele.removeChild(el);
+
+// 替换子元素
+ele.replaceChild(el1, el2);
+
+// 插入子元素
+parentElement.insertBefore(newElement, referenceElement);
+
+
+https://jsfiddle.net/9x226rme/3/
+
