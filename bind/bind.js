@@ -1,5 +1,5 @@
 //this.x = 9;
-console.log(this); 
+console.log(process); 
 var module = {
   x: 81,
   getX: function() { //console.log(this === global);
