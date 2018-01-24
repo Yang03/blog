@@ -38,11 +38,11 @@
             - 如果x 或者 是NaN, 返回false
             - 如果x或者y 是(-0, +0), 返回true
             - 其他 返回flase
-        - 如果Type[x]是String， 如果y 的有相同的字符，并且长度相同，返回true
+        - 如果Type[x]是String，如果y的有相同的字符，并且长度相同，返回true
         - 如果Type[x],Type[y] 都是是Boolean, x 和 y 都是true或者false 的时候，返回true
     - 如果 x是null, y是undefined，返回true  
-    - Type[x]是Number, Type[y]是String return x == ToNumner(y)  
-    - Type[x]是String, Type[y]是Number return ToNumner(x) == y
+    - Type[x]是Number,Type[y]是String return x == ToNumner(y)  
+    - Type[x]是String,Type[y]是Number return ToNumner(x) == y
     -   - Type[x]是Number, Type[y]是Boolean return x == ToNumner(y)  
     - Type[x]是Boolean, Type[y]是Number return ToNumner(x) == y
       
