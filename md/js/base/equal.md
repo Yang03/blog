@@ -1,3 +1,4 @@
+### 为什么 `'true' == true` return false
 
 
 
@@ -8,22 +9,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Array includes,indexOf, lastIndexOf 
-执行的是 ===
+Array 的 `includes,indexOf, lastIndexOf` 执行的是 `===`
 
 
       
