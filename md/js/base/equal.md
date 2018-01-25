@@ -35,17 +35,16 @@ return the result of the comparison `ToPrimitive(x) == y`.
    ===> 'true' == 1  
 
 ```
-`true` == 1, 通过第5条，
+`ture` == 1, 通过第5条，
 ```
     ToNumber('true') == 1 
     // ToNumber('true') return 'NAN'
 ```
-所以最后是 `NAN` == 1 的比较， `NAN` 和任何数据比较都返回 `false`
-
+所以最后是 `NAN` == 1 的比较， `NAN` 和任何数据比较都返回 `false`
 ### `[1] == 1` return `true`
-从第9条可以，看到, 其实 `ToPrimitive([1]) == 1`
+从第9条可以，看到, 其实 `ToPrimitive([1]) == 1`
 
-### `ToPrimitive([1])`
+### `ToPrimitive([1])`
 `ToPrimitive(input, PreferredType?)`
 
 可选参数PreferredType可以是Number或者String,它只代表了一个转换的偏好,转换结果不一定必须是这个参数所指的类型,但转换结果一定是一个原始值.如果PreferredType被标志为Number,则会进行下面的操作来转换输入的值:
@@ -59,7 +58,7 @@ return the result of the comparison `ToPrimitive(x) == y`.
 http://www.ecma-international.org/ecma-262/5.1/#sec-9.1
 
 ### `ToPrimitive([1]) == 1`
-这样会先对 `[1].valueOf().toString` 返回 `1`, 所以 `[1] == 1` 返回 `true`
+这样会先对 `[1].valueOf().toString` 返回 `1`,所以 `[1] == 1` 返回 `true`
 
 ### ToNumber
 undefined	NaN
