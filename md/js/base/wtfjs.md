@@ -1,4 +1,4 @@
-```javascript
+
 ### `[]` == `![]`
 
 首先 `![]` 会被转成 `Boolean`, `[]` 转成 `Bolean` 为 `true`, `[]` == `!true`, 即为，`[] == false`, 其实就是 
@@ -135,6 +135,7 @@ s instanceof String //-> true
 ```
 
 ### `null >= 0`
+
 ```
   null > 0
   +null = +0
