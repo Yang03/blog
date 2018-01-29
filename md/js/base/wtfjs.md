@@ -1,7 +1,7 @@
 
 ### `[]` == `![]`
 
-首先 `![]` 会被转成 `Boolean`, `[]` 转成 `Bolean` 为 `true`, `[]` == `!true`, 即为，`[] == false`, 其实就是 
+首先 `![]` 会被转成 `Boolean`, `[]` 转成 `Bolean` 为 `true`, `[]` == `!true`, 即为，`[] == false`, 其实就是 
     !!'true' // true
 `[] == ToNumber(false)`, `[] == 0`, `[].valueOf().toString() == 0`
 
@@ -46,14 +46,14 @@
 ```
 
 ### `baNaNa`
+``` javascript
  'b' + 'a' + + 'a' + 'a'
  // step1
  'b' + 'a' + (+ 'a') + 'a'
  // step2
- (+'a') // Numbeer('a') return NaN
+ (+'a') 
+ // Numbeer('a') return NaN
 ```
-
-
 ### 数组相加
 ```
     [1,2,3] + [4,5,6]
@@ -100,6 +100,7 @@
 ```
 
 ### 三个数字的比较
+
 ```
     1 < 2 < 3 // true
     //step
@@ -119,6 +120,7 @@
 ```
 
 ### `String`
+
 ```
 'str' // -> 'str'
 typeof 'str' // -> 'string'
