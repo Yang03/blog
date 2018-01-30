@@ -1,5 +1,5 @@
 ### `isArray`
-判断是否是数组，返回 `true` or `false`
+判断是否是数组，返回 `true` or `false`
 ```javascript
     Array.isArray([]) // true
     Array.isArray({}) // false
@@ -91,7 +91,7 @@ ployfill
     [1, 2, NaN].includes(NaN); // true
 
 ```
-尽管 `NaN !== NaN`, 但是 `includes` 就是可以找到。
+尽管 `NaN !== NaN`, 但是 `includes` 就是可以找到。
 
 ### `map`
 
@@ -134,7 +134,7 @@ ployfill
     // myFish 变为 ["angel", "clown", "mandarin", "sturgeon"]
     var a = [1,2,3]
     var newMyFish = a.slice(1,3)
-    // 不包括结束
+    // 不包括结束
     console.log(newMyFish) // [2]
 
 ```
