@@ -15,6 +15,3 @@
     * width = width + padding + border
 - `border-box`
     * width = width(包含padding-left + padding-right + border-left + border-right)
-
-- `padding-box`
-    * width = width(包含padding-left + padding-right) + border-top + border-bottom
