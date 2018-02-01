@@ -35,8 +35,8 @@
     * pending:  会被pushed到mircrotask queue 中，在当前的事件循环中或者下一个循环中
     * setTimeout(callback, n) 会被pushed 到macrotask queue中，即使n=0
 2.  task 在microtask 会在当前循环中执行，macrotask queue 会在下一个event loop 循环中  
-
-3.  click, ajax setTimeout 等的callback都是macrotask
+macrotask 主要包含：setTimeout、setInterval、setImmediate、I/O、UI交互事件
+microtask 主要包含：Promise、process.nextTick、MutaionObserver
 
  
 
