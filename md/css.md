@@ -16,4 +16,11 @@
 - `border-box`
     * width = width(包含padding-left + padding-right + border-left + border-right)
 
- ### `BFC Block Formatting Contexts` （块级格式上下文）   
+ ### `Block Formatting Contexts` （BFC 块级格式上下文） 
+它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。
+ - 作用：
+    * 清浮动，防止 margin 重叠等
+
+
+
+    
