@@ -15,3 +15,5 @@
     * width = width + padding + border
 - `border-box`
     * width = width(包含padding-left + padding-right + border-left + border-right)
+
+ ### `BFC Block Formatting Contexts` （块级格式上下文）   
