@@ -59,12 +59,16 @@
   height:100px;
 }
 ```
+
 ![image](https://user-images.githubusercontent.com/10190366/35713940-f7f4c0d4-0804-11e8-8095-27f9444f79f6.png)
+
 虽然存在浮动的元素 `d1`，但 `d2` 的左边依然会与包含块的左边相接触。
 每个元素的 `margin box`的左边， 与包含块`border box` 的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
 
 为 `d2` ,添加 `oveflow:hidden` 触发 `BFC`
+
 ![image](https://user-images.githubusercontent.com/10190366/35714068-bbe68d9c-0805-11e8-9b87-b403af0bbc87.png)
+
 可以看到：`d1` 和  `d2` 不再重合
 是因为： `BFC` 的区域不会与 `float box` 重叠
 
@@ -166,10 +170,9 @@
  .box {
     overflow:hidden 
 }
-
-
-![image](https://user-images.githubusercontent.com/10190366/35714945-a0d0eed0-080a-11e8-8014-6fdcfd6d413a.png)
  ```
+ ![image](https://user-images.githubusercontent.com/10190366/35714945-a0d0eed0-080a-11e8-8014-6fdcfd6d413a.png)
+
 
 
  
