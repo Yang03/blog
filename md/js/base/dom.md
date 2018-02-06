@@ -55,13 +55,11 @@
     var el = document.getElementsByClassName('d3')[0]
     var e = el.previousElementSibling;
     while(e) {
-        console.log(e)
         e = e.previousElementSibling;
     }
     //next
     var e = el.nextElementSibling;
     while(e) {
-        console.log(e)
         e = e.nextElementSibling;
     }
 
