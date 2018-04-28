@@ -38,5 +38,49 @@
 macrotask 主要包含：setTimeout、setInterval、setImmediate、I/O、UI交互事件
 microtask 主要包含：Promise、process.nextTick、MutaionObserver
 
+
+观察者优先级
+
+在每次轮训检查中，各观察者的优先级分别是：
+
+idle观察者 > I/O观察者 > check观察者。
+
+idle观察者：process.nextTick
+
+I/O观察者：一般性的I/O回调，如网络，文件，数据库I/O等
+
+check观察者：setImmediate，setTimeout
+
+### setTimout VS setImmediate
+```javascript
+    setImmediate(() => {
+        console.log(2)
+    })
+    setTimeout(() => {
+        console.log(1)
+    },0)
+```
+输出 1，2
+可见setTimeout 的优先级先于 setImmediate
+
+```javascript
+var fs = require('fs')
+
+fs.readFile(__filename, () => {
+  setTimeout(() => {
+    console.log(1)
+  }, 0)
+  setImmediate(() => {
+    console.log(2)
+  })
+})
+```
+如果两者都不在主模块调用（即在一个 IO circle 中调用），那么setImmediate的回调永远先执行。
+
+
+process.nextTick() 优先 promise
+
+
+
  
 

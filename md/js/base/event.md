@@ -37,10 +37,20 @@
 7. document ---> 冒泡
 
 
+### 事件捕获
+当某个元素触发某个事件（如onclick），顶层对象document就会发出一个事件流，随着DOM树的节点向目标元素节点流去，直到到达事件真正发生的目标元素。在这个过程中，事件相应的监听函数是不会被触发的。
+
+### 事件目标
+当到达目标元素之后，执行目标元素该事件相应的处理函数。如果没有绑定监听函数，那就不执行。
+
+### 事件冒泡
+从目标元素开始，往顶层元素传播。途中如果有节点绑定了相应的事件处理函数，这些函数都会被一次触发。如果想阻止事件起泡，可以使用e.stopPropagation()
+
+
 ### `addEventListener`
 
 addEventListener(eventName, callback, options)
-options 
+options
     - capture: true | false, true 表示 listener 会在该类型的事件捕获阶段传播到该 EventTarget 时触发。
     - once : true | false, 只执行一次，执行完后自动 remove
 useCapture true | false , true 捕获阶段执行
@@ -49,7 +59,7 @@ useCapture true | false , true 捕获阶段执行
 ``` html
     <div class="out" id="out">
   <div class="inner" id="inner">
-  
+
   </div>
 </div>
 ```
@@ -72,7 +82,7 @@ useCapture true | false , true 捕获阶段执行
     }, true)
     document.getElementById('inner').addEventListener('click', function(){
         alert('inner')
-    },true) 
+    },true)
 ```
 
 当你点击 `inner` 先 `alert('out')` 然后 `alert('inner')`
@@ -80,10 +90,6 @@ useCapture true | false , true 捕获阶段执行
 事件在捕获阶段，会由最外层的节点接收
 
 
-
-
-
-
-
-
-
+### 事件委托
+将事件绑定在父节点
+当子节点被点击的时候，click事件会从子节点开始向上冒泡。父节点捕获到事件之后，通过判断e.target.来判断是否为我们需要处理的节点。从而可以获取到相应的信息，并作处理。
